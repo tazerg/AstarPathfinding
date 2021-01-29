@@ -1,0 +1,3 @@
+[submodule "Assets/Externals/CryoDI"]
+	path = Assets/Externals/CryoDI
+	url = https://github.com/Cryofortress/CryoDI.git

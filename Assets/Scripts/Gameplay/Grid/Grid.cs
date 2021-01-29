@@ -1,57 +1,59 @@
-﻿using UnityEngine;
-
-public abstract class Grid : MonoBehaviour
+﻿public class Grid : IGrid
 {
-    public abstract int RowsCount { get; }
-    public abstract int ColumnsCount { get; }
+    public Grid(ICell[,] cells)
+    {
+        Cells = cells;
+        _rowsCount = Cells.GetLength(0);
+        _columnsCount = Cells.GetLength(1);
+    }
 
-    public abstract Cell[,] Cells { get; protected set; }
+    private readonly int _rowsCount;
+    private readonly int _columnsCount;
+    
+    public ICell[,] Cells { get; }
 
-    public Cell GetCellByCoordinates(int xCoordinate, int yCoordinate)
+    public ICell GetCell(int x, int y)
     {
         //Если одна из координат не валидна или ячейка в этой координате - стена
-        if (!IsCoordinateValidValue(xCoordinate, ColumnsCount) || !IsCoordinateValidValue(yCoordinate, RowsCount) || Cells[yCoordinate, xCoordinate].CellType == CellType.Wall)
+        if (!IsCoordinateValidValue(x, _columnsCount) || 
+            !IsCoordinateValidValue(y, _rowsCount) || 
+            Cells[y, x].StaticCellType == StaticCellType.Wall)
             //Ничего не возвращаем
             return null;
 
-        return Cells[yCoordinate, xCoordinate];
+        return Cells[y, x];
     }
 
-    public Cell GetStartPathCell()
+    public ICell GetStartPathCell()
     {
-        Cell cellToReturn = null;
-        for (int i = 0; i < RowsCount; i++)
+        var startCell = FindCell(DynamicCellType.StartPath);
+        return startCell;
+    }
+
+    public ICell GetEndPathCell()
+    {
+        var endCell = FindCell(DynamicCellType.EndPath);
+        return endCell;
+    }
+
+    private bool IsCoordinateValidValue(int coordinateValue, int coordinateMaxValue)
+    {
+        return coordinateValue < coordinateMaxValue && coordinateValue >= 0;
+    }
+
+    private ICell FindCell(DynamicCellType dynamicCellType)
+    {
+        for (var i = 0; i < _rowsCount; i++)
         {
-            for (int j = 0; j < ColumnsCount; j++)
+            for (var j = 0; j < _columnsCount; j++)
             {
-                if (Cells[i, j].IsStartPathCell)
-                {
-                    cellToReturn = Cells[i, j];
-                    break;
-                }
+                if (Cells[i, j].DynamicCellType != dynamicCellType) 
+                    continue;
+
+                return Cells[i, j];
             }
         }
 
-        return cellToReturn;
+        return null;
     }
-
-    public Cell GetEndPathCell()
-    {
-        Cell cellToReturn = null;
-        for (int i = 0; i < RowsCount; i++)
-        {
-            for (int j = 0; j < ColumnsCount; j++)
-            {
-                if (Cells[i, j].IsEndPathCell)
-                {
-                    cellToReturn = Cells[i, j];
-                    break;
-                }
-            }
-        }
-
-        return cellToReturn;
-    }
-
-    bool IsCoordinateValidValue(int coordinateValue, int coordinateMaxValue) => coordinateValue < coordinateMaxValue && coordinateValue >= 0;
 }

@@ -1,22 +1,36 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using CryoDI;
+using UnityEngine;
 
-public class AlgorithmRunner : MonoBehaviour
+public class AlgorithmRunner : CryoBehaviour
 {
-    Grid currentGrid;
+    [Dependency] private UIGridView GridView { get; set; }
+    [Dependency] private IPathfindingAlgorithm PathfindingAlgorithm { get; set; }
 
-    private void Awake()
-    {
-        currentGrid = FindObjectOfType<Grid>();
-    }
-
+    private IEnumerable<ICell> _shortestPath;
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            TryRunAlgorithm();
+            FindShortestPath();
     }
 
-    void TryRunAlgorithm()
+    private void FindShortestPath()
     {
-        AstarAlgorithm.Run(currentGrid);
+        _shortestPath = PathfindingAlgorithm.GetShortestPath(GridView.Grid);
+        
+        if (_shortestPath.Count() < 0)
+            return;
+
+        ShowShortestPath();
+    }
+
+    private void ShowShortestPath()
+    {
+        foreach (var cell in _shortestPath)
+        {
+            cell.SetAsPathCell();
+        }
     }
 }

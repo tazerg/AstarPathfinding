@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1f54ee2-22aa-4de5-98f5-f14304527b52" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Externals/CryoDI" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorDatabaseLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorDatabaseLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorsInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorsInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/IColorDatabase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/IColorDatabase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AtributeDrawers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CustomEditors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CustomEditors/UICellViewEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CustomEditors/UICellViewEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CustomEditors/UIGridViewEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Tests.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Tests/AstarAlgorithmTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Tests/AstarAlgorithmTests.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMain.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/IErrorMessageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/IErrorMessageController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/IErrorMessageFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/IErrorMessageFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/DynamicCellType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/DynamicCellType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/ICell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/ICell.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/IGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/IGrid.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/UIGridView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/IPathfindingAlgorithm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/IPathfindingAlgorithm.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cell.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Cell.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ReadonlyAttributeDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AtributeDrawers/ReadonlyAttributeDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/ReadonlyAttributeDrawer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/AtributeDrawers/ReadonlyAttributeDrawer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UIGridEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/UIGridEditor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/CustomEditors/UIGridViewEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageGenerator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/CellType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/StaticCellType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/CellType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/StaticCellType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/UICell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/UICellView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/UICell.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/UICellView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Grid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/UIGrid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/UIGrid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/UIGridView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/AlgorithmRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/AlgorithmRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/AstarAlgorithm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/AstarAlgorithm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ColorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorDatabase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ColorManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorDatabase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameWindow/ErrorPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GameWindow/ErrorPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameWindow/GameWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GameWindow/GameWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2FEAF16E-8000-4E0C-ADAE-3F2E05F2A3FA/08/4db70696/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity Editors/2019.4.8f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/GridLayoutGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/Tests/AstarAlgorithmTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F7EDCB31-8EF2-4BF7-B007-4FFB5877F622/3e/3f06f57e/IPointerClickHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/59819BE1-42C3-4115-ADE6-88F6962021F1/0a/965ff9f2/Reflect.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/UICell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/StaticCellType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/IColorDatabase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ColorManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ColorDatabase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorsInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorDatabaseLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/DynamicCellType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/IGrid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/IPathfindingAlgorithm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/IErrorMessageFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameWindow/GameWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/IErrorMessageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/AstarAlgorithm.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/GameWindow/ErrorPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/UIGrid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/UIGridEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/UIGridViewEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/Color/ColorDatabase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Error/ErrorMessageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/CustomEditors/UICellViewEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/Tests/Data/TestGrid.cs" />
+        <option value="$PROJECT_DIR$/Packages/manifest.json" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/Tests/Data/TestCell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/Cell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/UIGridView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMain.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Pathfinding/AlgorithmRunner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/UICellView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Grid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/Tests/AstarAlgorithmTests.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gameplay/Grid/Cell/ICell.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1nbRJguI39rWpm8umb4XJdTVYfH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35005066" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29989868" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="RiderNuGetOptionsPageId" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12244">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="12244" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1f54ee2-22aa-4de5-98f5-f14304527b52" name="Default Changelist" comment="" />
+      <created>1611656739866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611656739866</updated>
+      <workItem from="1611656746565" duration="921000" />
+      <workItem from="1611679202444" duration="8541000" />
+      <workItem from="1611729532705" duration="7538000" />
+      <workItem from="1611756346287" duration="3783000" />
+      <workItem from="1611773428107" duration="1676000" />
+      <workItem from="1611775145525" duration="2341000" />
+      <workItem from="1611777549951" duration="421000" />
+      <workItem from="1611849296061" duration="837000" />
+      <workItem from="1611850204358" duration="273000" />
+      <workItem from="1611850495547" duration="896000" />
+      <workItem from="1611851465907" duration="1030000" />
+      <workItem from="1611852640328" duration="408000" />
+      <workItem from="1611853563035" duration="1431000" />
+      <workItem from="1611855026440" duration="1192000" />
+      <workItem from="1611856249698" duration="195000" />
+      <workItem from="1611938368642" duration="6181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="889" y="497" width="775" height="317" key="#C#" timestamp="1611690717996">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="889" y="497" width="775" height="317" key="#C#/0.0.2048.1112@0.0.2048.1112" timestamp="1611690717996" />
+    <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611849470448">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1611849470448" />
+    <state x="780" y="260" key="#xdebugger.evaluate" timestamp="1611942935453">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="780" y="260" key="#xdebugger.evaluate/0.0.2048.1112@0.0.2048.1112" timestamp="1611942935453" />
+    <state width="452" height="464" key="DebuggerActiveHint" timestamp="1611944361105">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="452" height="464" key="DebuggerActiveHint/0.0.2048.1112@0.0.2048.1112" timestamp="1611944361105" />
+    <state width="2005" height="403" key="GridCell.Tab.0.bottom" timestamp="1611944334345">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334345" />
+    <state width="2005" height="403" key="GridCell.Tab.0.center" timestamp="1611944334345">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334345" />
+    <state width="2005" height="403" key="GridCell.Tab.0.left" timestamp="1611944334344">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334344" />
+    <state width="2005" height="403" key="GridCell.Tab.0.right" timestamp="1611944334345">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334345" />
+    <state width="2005" height="403" key="GridCell.Tab.1.bottom" timestamp="1611944338526">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.1.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1611944338526" />
+    <state width="2005" height="403" key="GridCell.Tab.1.center" timestamp="1611944338526">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.1.center/0.0.2048.1112@0.0.2048.1112" timestamp="1611944338526" />
+    <state width="2005" height="403" key="GridCell.Tab.1.left" timestamp="1611944338526">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.1.left/0.0.2048.1112@0.0.2048.1112" timestamp="1611944338526" />
+    <state width="2005" height="403" key="GridCell.Tab.1.right" timestamp="1611944338526">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.1.right/0.0.2048.1112@0.0.2048.1112" timestamp="1611944338526" />
+    <state width="2005" height="403" key="GridCell.Tab.2.bottom" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.2.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.2.center" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.2.center/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.2.left" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.2.left/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.2.right" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.2.right/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.3.bottom" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.3.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.3.center" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.3.center/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.3.left" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.3.left/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state width="2005" height="403" key="GridCell.Tab.3.right" timestamp="1611944334167">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="403" key="GridCell.Tab.3.right/0.0.2048.1112@0.0.2048.1112" timestamp="1611944334167" />
+    <state x="805" y="258" key="RiderGenerateDialog" timestamp="1611938615490">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="258" key="RiderGenerateDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1611938615490" />
+    <state x="533" y="201" key="SettingsEditor" timestamp="1611850383243">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="533" y="201" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1611850383243" />
+    <state x="93" y="93" width="1862" height="926" key="VCS.FileHistoryDialog" timestamp="1611756746832">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="93" y="93" width="1862" height="926" key="VCS.FileHistoryDialog/0.0.2048.1112@0.0.2048.1112" timestamp="1611756746832" />
+    <state x="695" y="155" width="658" height="801" key="find.popup" timestamp="1611849854169">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="695" y="155" width="658" height="801" key="find.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1611849854169" />
+    <state x="681" y="259" key="run.anything.popup" timestamp="1611776977584">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="681" y="259" key="run.anything.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1611776977584" />
+    <state x="687" y="243" width="672" height="678" key="search.everywhere.popup" timestamp="1611938819638">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="687" y="243" width="672" height="678" key="search.everywhere.popup/0.0.2048.1112@0.0.2048.1112" timestamp="1611938819638" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/GameMain.cs</url>
+          <line>9</line>
+          <properties documentPath="C:\Unity_Projects\GitHub\AstarPathfinding\Assets\Scripts\GameMain.cs" initialLine="11">
+            <startOffsets>
+              <option value="242" />
+            </startOffsets>
+            <endOffsets>
+              <option value="317" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Editor/Tests/AstarAlgorithmTests.cs</url>
+          <line>105</line>
+          <properties documentPath="C:\Unity_Projects\GitHub\AstarPathfinding\Assets\Scripts\Editor\Tests\AstarAlgorithmTests.cs" initialLine="105">
+            <startOffsets>
+              <option value="4816" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4842" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

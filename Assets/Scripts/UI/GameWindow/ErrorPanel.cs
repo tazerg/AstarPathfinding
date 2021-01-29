@@ -1,15 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ErrorPanel : MonoBehaviour
 {
-    [SerializeField]
-    Text errorText;
-    public Text ErrorText => errorText;
+    [SerializeField] private Button _closeButton;
+    [SerializeField] private Text _errorText;
 
-    public void ClosePanel()
+    public void OpenPanel(string errorMessage)
+    {
+        _errorText.text = errorMessage;
+        gameObject.SetActive(true);
+    }
+
+    private void Awake()
+    {
+        CheckReferences();
+        
+        _closeButton.onClick.AddListener(ClosePanel);
+    }
+
+    private void CheckReferences()
+    {
+        if (_closeButton == null)
+            Debug.LogError("Can't find close button");
+        
+        if (_errorText == null)
+            Debug.LogError("Can't find error text");
+    }
+    
+    private void ClosePanel()
     {
         gameObject.SetActive(false);
     }

@@ -1,19 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
 
-public abstract class Cell : MonoBehaviour
+public class Cell : ICell
 {
-    public abstract CellType CellType { get; }
+    public Cell(StaticCellType staticCellType, DynamicCellType dynamicCellType, int x, int y)
+    {
+        StaticCellType = staticCellType;
+        DynamicCellType = dynamicCellType;
+        X = x;
+        Y = y;
+    }
 
-    public abstract int YCoordinate { get; set; }
-    public abstract int XCoordinate { get; set; }
+    public event Action PartOfPathMarked;
+    public StaticCellType StaticCellType { get; }
+    public DynamicCellType DynamicCellType { get; set; }
+
+    public int X { get; }
+    public int Y { get; }
 
     public int GCost { get; set; }
     public int HCost { get; set; }
     public int FCost => GCost + HCost;
-    public Cell ParentCell { get; set; }
-
-    public bool IsStartPathCell { get; protected set; }
-    public bool IsEndPathCell { get; protected set; }
-
-    public abstract void SetAsPathCell();
+    
+    public ICell ParentCell { get; set; }
+    public void SetAsPathCell()
+    {
+        DynamicCellType = DynamicCellType.PartOfPath;
+        PartOfPathMarked?.Invoke();
+    }
 }

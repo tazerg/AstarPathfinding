@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71420df1648493143812eb2763c61f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
-  xCoordinate: 0
-  yCoordinate: 0
-  image: {fileID: 6155820433212495843}
+  _staticCellType: 0
+  _x: 0
+  _y: 0
+  _image: {fileID: 6155820433212495843}

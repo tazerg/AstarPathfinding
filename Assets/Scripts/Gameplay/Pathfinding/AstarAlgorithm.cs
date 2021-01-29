@@ -1,143 +1,212 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CryoDI;
 using UnityEngine;
 
-public static class AstarAlgorithm 
+public class AstarAlgorithm : IPathfindingAlgorithm
 {
-    const int HORIZONTAL_VERTICAL_COST = 10;
-    const int DIAGONAL_COST = 14;
+    private const int HorizontalVerticalCost = 10;
+    private const int DiagonalCost = 14;
+    private const int Offset = 1;
+    
+    [Dependency] private IErrorMessageController ErrorMessageController { get; set; }
 
-    static List<Cell> neighbourCells = new List<Cell>();
-    static List<Cell> openCells = new List<Cell>();
-    static List<Cell> closedCells = new List<Cell>();
+    private readonly IList<ICell> _neighbourCells = new List<ICell>();
+    private readonly IList<ICell> _openCells = new List<ICell>();
+    private readonly IList<ICell> _closedCells = new List<ICell>();
+    private readonly IList<ICell> _shortestPath = new List<ICell>();
 
-    public static void Run(Grid grid)
+    private IGrid _workedGrid;
+    private ICell _startPathCell;
+    private ICell _endPathCell;
+    private ICell _processedCell;
+    private ICell _currentNeighbourCell;
+
+    private bool _isPathFinished;
+
+    public IEnumerable<ICell> GetShortestPath(IGrid grid)
     {
-        openCells.Clear();
-        closedCells.Clear();
+        _workedGrid = grid;
+        
+        ClearData();
+        CollectBoundaryValues();
+        if (TryShowErrorMessage())
+            return _shortestPath;
 
-        //Стартовая и конечная точки на пути
-        Cell startPathCell = grid.GetStartPathCell();
-        Cell endPathCell = grid.GetEndPathCell();
+        InitializePathfinding();
+        FindShortestPath();
 
-        //Проверка наличия граничных точек
-        bool haveStartPathPoint = startPathCell != null;
-        bool haveEndPathPoint = endPathCell != null;
-        if (!haveStartPathPoint || !haveEndPathPoint)
+        if (!_isPathFinished)
         {
-            if (!haveStartPathPoint && !haveEndPathPoint)
-                ErrorMessageGenerator.ShowErrorMessage(ErrorMessageType.PathBordersNotFound);
-            else if (!haveStartPathPoint)
-                ErrorMessageGenerator.ShowErrorMessage(ErrorMessageType.StartPathPointNotFound);
-            else if (!haveEndPathPoint)
-                ErrorMessageGenerator.ShowErrorMessage(ErrorMessageType.EndPathPointNotFound);
+            ShowErrorMessage(ErrorMessageType.PathNotFound);
+            return _shortestPath;
+        }
+        
+        CalculateLowestPath();
+        return _shortestPath;
+    }
 
-            return;
+    private void ClearData()
+    {
+        _neighbourCells.Clear();
+        _openCells.Clear();
+        _closedCells.Clear();
+        _shortestPath.Clear();
+    }
+
+    private void CollectBoundaryValues()
+    {
+        _startPathCell = _workedGrid.GetStartPathCell();
+        _endPathCell = _workedGrid.GetEndPathCell();
+    }
+
+    private bool TryShowErrorMessage()
+    {
+        var haveStartPathPoint = _startPathCell != null;
+        var haveEndPathPoint = _endPathCell != null;
+
+        if (!haveStartPathPoint && !haveEndPathPoint)
+        {
+            ShowErrorMessage(ErrorMessageType.PathBordersNotFound);
+            return true;
         }
 
-        openCells.Add(startPathCell);
+        if (!haveStartPathPoint)
+        {
+            ShowErrorMessage(ErrorMessageType.StartPathPointNotFound);
+            return true;
+        }
 
-        //Инициализируем начальную стоимость достижения ячейки
-        foreach(Cell cell in grid.Cells)
+        if (!haveEndPathPoint)
+        {
+            ShowErrorMessage(ErrorMessageType.EndPathPointNotFound);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void ShowErrorMessage(ErrorMessageType errorMessageType)
+    {
+        ErrorMessageController.ShowErrorMessage(errorMessageType);
+    }
+
+    private void InitializePathfinding()
+    {
+        _openCells.Add(_startPathCell);
+
+        foreach(var cell in _workedGrid.Cells)
         {
             cell.GCost = int.MaxValue;
         }
-        startPathCell.GCost = 0;
-        startPathCell.HCost = CalculateDistanceCost(startPathCell, endPathCell);
+        _startPathCell.GCost = 0;
+        _startPathCell.HCost = CalculateDistanceCost(_startPathCell, _endPathCell);
 
-        bool isPathFinded = false;
+        _isPathFinished = false;
+    }
 
-        //Основной алгоритм
-        while (openCells.Count > 0)
+    private int CalculateDistanceCost(ICell start, ICell end)
+    {
+        var xDifference = Mathf.Abs(start.X - end.X);
+        var yDifference = Mathf.Abs(start.Y - end.Y);
+        var difference = Mathf.Abs(xDifference - yDifference);
+
+        return DiagonalCost * Mathf.Min(xDifference, yDifference) + HorizontalVerticalCost * difference;
+    }
+
+    private void FindShortestPath()
+    {
+        while (_openCells.Count > 0)
         {
-            //Поиск открытой точки c наименьшей суммарной стоимостью
-            int lowestFCostInOpenCells = openCells.Min(x => x.FCost);
-            Cell lowestFCostCell = openCells.Find(x => x.FCost == lowestFCostInOpenCells);
-
-            //Если эта точка конец пути - алгоритм завершен.
-            if (lowestFCostCell == endPathCell)
+            _processedCell = FindLowestFCostCell();
+            if (IsEndOfPath())
             {
-                isPathFinded = true;
+                _isPathFinished = true;
                 break;
             }
-
-            openCells.Remove(lowestFCostCell);
-            closedCells.Add(lowestFCostCell);
-
-            //Сбор соседних точек
-            CollectNeighbourCells(grid, lowestFCostCell);
-            foreach (Cell neighbourCell in neighbourCells)
-            {
-                if (closedCells.Contains(neighbourCell))
-                    continue;
-
-                //Расчёт нового GCost
-                int newNeighbourGCost = lowestFCostCell.GCost + CalculateDistanceCost(lowestFCostCell, neighbourCell);
-                //Если новая стоимость меньше хранимой в ячейке - переписываем данные
-                if (newNeighbourGCost < neighbourCell.GCost)
-                {
-                    neighbourCell.ParentCell = lowestFCostCell;
-                    neighbourCell.GCost = newNeighbourGCost;
-                    neighbourCell.HCost = CalculateDistanceCost(neighbourCell, endPathCell);
-
-                    if (!openCells.Contains(neighbourCell))
-                        openCells.Add(neighbourCell);
-                }
-            }
+            
+            CloseProcessedCell();
+            CollectNeighbourCells();
+            ProcessNeighbourCells();
         }
-
-        if (!isPathFinded)
-        {
-            ErrorMessageGenerator.ShowErrorMessage(ErrorMessageType.PathNotFound);
-            return;
-        }
-
-        CalculateLowestPath(startPathCell, endPathCell);
     }
 
-    static int CalculateDistanceCost(Cell start, Cell end)
+    private ICell FindLowestFCostCell()
     {
-        int xDifference = Mathf.Abs(start.XCoordinate - end.XCoordinate);
-        int yDifference = Mathf.Abs(start.YCoordinate - end.YCoordinate);
-        int difference = Mathf.Abs(xDifference - yDifference);
-
-        return DIAGONAL_COST * Mathf.Min(xDifference, yDifference) + HORIZONTAL_VERTICAL_COST * difference;
+        var lowestFCostInOpenCells = _openCells.Min(x => x.FCost);
+        var lowestFCostCell = _openCells.FirstOrDefault(x => x.FCost == lowestFCostInOpenCells);
+        return lowestFCostCell;
     }
 
-    static void CollectNeighbourCells(Grid grid, Cell originCell)
+    private bool IsEndOfPath()
     {
-        neighbourCells.Clear();
+        return _processedCell == _endPathCell;
+    }
 
-        const int OFFSET = 1;
+    private void CloseProcessedCell()
+    {
+        _openCells.Remove(_processedCell);
+        _closedCells.Add(_processedCell);
+    }
+
+    private void CollectNeighbourCells()
+    {
+        _neighbourCells.Clear();
+
         //Соседи слева
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate - OFFSET, originCell.YCoordinate));
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate - OFFSET, originCell.YCoordinate - OFFSET));
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate - OFFSET, originCell.YCoordinate + OFFSET));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X - Offset, _processedCell.Y));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X - Offset, _processedCell.Y - Offset));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X - Offset, _processedCell.Y + Offset));
 
         //Соседи справа
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate + OFFSET, originCell.YCoordinate));
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate + OFFSET, originCell.YCoordinate - OFFSET));
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate + OFFSET, originCell.YCoordinate + OFFSET));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X + Offset, _processedCell.Y));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X + Offset, _processedCell.Y - Offset));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X + Offset, _processedCell.Y + Offset));
 
         //Сосед сверху
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate, originCell.YCoordinate + OFFSET));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X, _processedCell.Y + Offset));
 
         //Сосед сниху
-        neighbourCells.AddIfNotNull(grid.GetCellByCoordinates(originCell.XCoordinate, originCell.YCoordinate - OFFSET));
+        _neighbourCells.AddIfNotNull(_workedGrid.GetCell(_processedCell.X, _processedCell.Y - Offset));
     }
 
-    static void CalculateLowestPath(Cell startPath, Cell endPath)
+    private void ProcessNeighbourCells()
     {
-        Cell currentCell = endPath.ParentCell;
+        foreach (var neighbourCell in _neighbourCells)
+        {
+            if (_closedCells.Contains(neighbourCell))
+                continue;
 
-        //Если родительская точка сразу является стартовой - строить путь не нужно
-        if (currentCell == startPath)
+            var newNeighbourGCost = _processedCell.GCost + CalculateDistanceCost(_processedCell, neighbourCell);
+            if (newNeighbourGCost >= neighbourCell.GCost)
+                continue;
+            
+            UpdateNeighbourCellInfo(neighbourCell, newNeighbourGCost);
+        }
+    }
+
+    private void UpdateNeighbourCellInfo(ICell neighbourCell, int newGCost)
+    {
+        neighbourCell.ParentCell = _processedCell;
+        neighbourCell.GCost = newGCost;
+        neighbourCell.HCost = CalculateDistanceCost(neighbourCell, _endPathCell);
+
+        if (!_openCells.Contains(neighbourCell))
+            _openCells.Add(neighbourCell);
+    }
+
+    private void CalculateLowestPath()
+    {
+        _shortestPath.Clear();
+        
+        var currentCell = _endPathCell.ParentCell;
+        if (currentCell == _startPathCell)
             return;
 
         do
         {
-            currentCell.SetAsPathCell();
+            _shortestPath.Add(currentCell);
             currentCell = currentCell.ParentCell;
-        } while (currentCell != startPath);
+        } while (currentCell != _startPathCell);
     }
 }
