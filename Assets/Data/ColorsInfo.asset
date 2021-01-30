@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fab921d5e44bb988e08eeedd905580, type: 3}
   m_Name: ColorsInfo
   m_EditorClassIdentifier: 
-  _floorColor: {r: 1, g: 1, b: 1, a: 1}
-  _wallColor: {r: 0, g: 0, b: 0, a: 1}
-  _startPathColor: {r: 0.5063899, g: 1, b: 0.4764151, a: 1}
-  _endPathColor: {r: 1, g: 0.7165647, b: 0.0990566, a: 1}
-  _partOfPathColor: {r: 0.6776142, g: 0, b: 1, a: 1}
+  _staticCellColors:
+  - StaticCellType: 0
+    Color: {r: 1, g: 1, b: 1, a: 1}
+  - StaticCellType: 1
+    Color: {r: 0, g: 0, b: 0, a: 1}
+  _dynamicCellColors:
+  - DynamicCellType: 1
+    Color: {r: 0.44816014, g: 0.764151, b: 0.039649345, a: 1}
+  - DynamicCellType: 2
+    Color: {r: 0.6886792, g: 0.04223035, b: 0.047921583, a: 1}
+  - DynamicCellType: 3
+    Color: {r: 0, g: 0.33224145, b: 0.8584906, a: 1}

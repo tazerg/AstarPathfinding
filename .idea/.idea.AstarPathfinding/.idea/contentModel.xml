@@ -76,7 +76,9 @@
               <e p="ColorDatabase.cs" t="Include" />
               <e p="ColorDatabaseLoader.cs" t="Include" />
               <e p="ColorsInfo.cs" t="Include" />
+              <e p="DynamicCellColor.cs" t="Include" />
               <e p="IColorDatabase.cs" t="Include" />
+              <e p="StaticCellColor.cs" t="Include" />
             </e>
           </e>
           <e p="Editor" t="Include">
