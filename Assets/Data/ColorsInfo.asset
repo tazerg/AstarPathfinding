@@ -24,3 +24,5 @@ MonoBehaviour:
     Color: {r: 0.6886792, g: 0.04223035, b: 0.047921583, a: 1}
   - DynamicCellType: 3
     Color: {r: 0, g: 0.33224145, b: 0.8584906, a: 1}
+  - DynamicCellType: 0
+    Color: {r: 1, g: 1, b: 1, a: 1}
